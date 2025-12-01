@@ -4,17 +4,13 @@ const Introduction = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6 sm:space-y-8 md:space-y-10 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed sm:leading-relaxed md:leading-relaxed text-foreground/90">
-            <p className="animate-fade-in" style={{ animationDelay: '0s' }}>
-              I help startups, creative professionals, and growing brands turn their ideas into fast, modern, and beautifully crafted digital experiences. With 6 years of experience in frontend development, I specialize in transforming concepts into clean, scalable interfaces and fully responsive web applications.
+            <p className="animate-fade-in text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground" style={{ animationDelay: '0s' }}>
+              Senior full stack developer with 15+ years of experience delivering fast, scalable, and high-quality web applications.
             </p>
-            <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              My work blends clarity, performance, and thoughtful design, using technologies like HTML, CSS, JavaScript, React, Next.js, Tailwind, and modern UI principles to build interfaces that feel intuitive and meaningful.
-            </p>
-            <p className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              With 1 year of backend experience, I also understand how products function behind the scenes — helping me create smoother, more reliable user experiences.
-            </p>
-            <p className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              I'm always exploring new tools, frameworks, and best practices to push my skills further and deliver work that not only looks great but performs exceptionally well.
+            <p className="animate-fade-in text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground" style={{ animationDelay: '0.1s' }}>
+              I transform ideas into modern digital products using React, Node.js, Spring Boot, and SQL/NoSQL systems.            </p>
+            <p className="animate-fade-in text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground" style={{ animationDelay: '0.2s' }}>
+              With strong leadership, clean coding practices, and a deep focus on performance and user experience, I help startups and businesses build reliable software that grows with them.
             </p>
           </div>
         </div>

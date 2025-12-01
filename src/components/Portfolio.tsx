@@ -6,27 +6,27 @@ const Portfolio = () => {
     {
       title: "WordPress Development",
       category: "Custom WordPress themes and plugins tailored to your specific needs.",
-      image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=600&fit=crop",
+      image: "../src/assets/portfolio-wordpress.jpg",
     },
     {
       title: "Web Development",
       category: "Building responsive websites, web applications, and interactive dashboards with modern technologies.",
-      image: "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=800&h=600&fit=crop",
+      image: "../src/assets/portfolio-webdev.jpg",
     },
     {
       title: "UI/UX Design",
       category: "Creating clean, intuitive, and user-friendly interfaces that enhance user experience.",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+      image: "../src/assets/portfolio-uiux.jpg",
     },
     {
       title: "E-Commerce Platform",
       category: "A modern e-commerce solution with real-time inventory and payment processing",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+      image: "../src/assets/portfolio-ecommerce.jpg",
     },
     {
       title: "Financial Analytics Tool",
       category: "Advanced data visualization and reporting for financial insights",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      image: "../src/assets/portfolio-analytics.jpg",
     },
   ];
 

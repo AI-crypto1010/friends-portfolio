@@ -1,4 +1,4 @@
-import { Code2, Palette, Smartphone } from "lucide-react";
+import { AppleIcon, Bitcoin, Bot, Code2, LucideGitGraph, Palette, Smartphone } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -17,6 +17,26 @@ const Services = () => {
       title: "UI/UX Design",
       description: "Creating intuitive digital experiences that blend beautiful design with seamless functionality, ensuring every interaction feels natural.",
     },
+    {
+      icon: <AppleIcon />,
+      title: "AI Development",
+      description: "Custom AI solutions, machine learning models, and intelligent automation systems"
+    },
+    {
+      icon: <Bot className="w-12 h-12" />,
+      title: "Bot Development",
+      description: "Intelligent chatbots, Telegram Bot, discord bot and automated trading bots for various platforms"
+    },
+    {
+      icon: <LucideGitGraph />,
+      title: "Trading Strategy",
+      description: "Scraping trading datas from various platforms, Algorithmic trading systems, backtesting, and strategy optimization"
+    },
+    {
+      icon: <Bitcoin className="w-12 h-12" />,
+      title: "Blockchain Development",
+      description: "Smart contracts, DeFi applications, and cryptocurrency solutions"
+    },
   ];
 
   return (
@@ -27,9 +47,6 @@ const Services = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             what i offer
           </h2>
-          <span className="text-[hsl(var(--vibrant-blue))] text-lg sm:text-xl md:text-2xl font-bold border-2 border-[hsl(var(--vibrant-blue))] rounded-lg px-3 sm:px-4 py-1 sm:py-2 bg-[hsl(var(--vibrant-blue))]/10">
-            [3]
-          </span>
         </div>
 
         {/* Services Grid */}

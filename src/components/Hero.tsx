@@ -1,5 +1,6 @@
 import profilePhoto from "@/assets/profile-photo.png";
 
+
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col bg-black text-white overflow-hidden">
@@ -7,7 +8,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${profilePhoto})`,
+          // backgroundImage: `url(${profilePhoto})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
