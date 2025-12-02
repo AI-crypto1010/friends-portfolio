@@ -1,18 +1,64 @@
-import profilePhoto from "@/assets/profile-photo.png";
-
+import { useEffect, useRef } from "react";
+// @ts-ignore - Vanta.js doesn't have perfect TypeScript support
+import * as THREE from "three";
 
 const Hero = () => {
+  const vantaRef = useRef<HTMLDivElement>(null);
+  const vantaEffect = useRef<any>(null);
+
+  useEffect(() => {
+    if (!vantaRef.current) return;
+
+    let mounted = true;
+
+    // Dynamically import Vanta.js Birds effect
+    import("vanta/dist/vanta.birds.min")
+      .then((BIRDS) => {
+        if (!vantaRef.current || !mounted) return;
+
+        // Handle different export formats
+        const BirdsEffect = BIRDS.default || BIRDS;
+
+        // Initialize Vanta Birds effect
+        vantaEffect.current = BirdsEffect({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x000000,
+          color1: 0xffffff,
+          color2: 0xffffff,
+          birdSize: 0.60,
+          speedLimit: 3.00,
+          separation: 19.00,
+          alignment: 19.00,
+          cohesion: 19.00,
+          quantity: 5.00,
+          backgroundAlpha: 0.0,
+          THREE: THREE,
+        });
+      })
+      .catch((error) => {
+        console.error("Error loading Vanta.js:", error);
+      });
+
+    // Cleanup function
+    return () => {
+      mounted = false;
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+      }
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex flex-col bg-black text-white overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          // backgroundImage: `url(${profilePhoto})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Vanta.js Birds Background */}
+      <div ref={vantaRef} className="absolute inset-0 z-0" />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-black/30 to-black/90" />

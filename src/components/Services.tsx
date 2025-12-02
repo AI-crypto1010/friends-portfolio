@@ -18,7 +18,7 @@ const Services = () => {
       description: "Creating intuitive digital experiences that blend beautiful design with seamless functionality, ensuring every interaction feels natural.",
     },
     {
-      icon: <AppleIcon />,
+      icon: <AppleIcon className="w-12 h-12" />,
       title: "AI Development",
       description: "Custom AI solutions, machine learning models, and intelligent automation systems"
     },
