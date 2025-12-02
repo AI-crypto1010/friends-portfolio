@@ -1,32 +1,37 @@
 import { ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
+import portfolioWordpress from "@/assets/portfolio-wordpress.jpg";
+import portfolioWebdev from "@/assets/portfolio-webdev.jpg";
+import portfolioUiux from "@/assets/portfolio-uiux.jpg";
+import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
+import portfolioAnalytics from "@/assets/portfolio-analytics.jpg";
 
 const Portfolio = () => {
   const projects = [
     {
       title: "WordPress Development",
       category: "Custom WordPress themes and plugins tailored to your specific needs.",
-      image: "../src/assets/portfolio-wordpress.jpg",
+      image: portfolioWordpress,
     },
     {
       title: "Web Development",
       category: "Building responsive websites, web applications, and interactive dashboards with modern technologies.",
-      image: "../src/assets/portfolio-webdev.jpg",
+      image: portfolioWebdev,
     },
     {
       title: "UI/UX Design",
       category: "Creating clean, intuitive, and user-friendly interfaces that enhance user experience.",
-      image: "../src/assets/portfolio-uiux.jpg",
+      image: portfolioUiux,
     },
     {
       title: "E-Commerce Platform",
       category: "A modern e-commerce solution with real-time inventory and payment processing",
-      image: "../src/assets/portfolio-ecommerce.jpg",
+      image: portfolioEcommerce,
     },
     {
       title: "Financial Analytics Tool",
       category: "Advanced data visualization and reporting for financial insights",
-      image: "../src/assets/portfolio-analytics.jpg",
+      image: portfolioAnalytics,
     },
   ];
 
