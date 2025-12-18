@@ -105,6 +105,8 @@ const Testimonials = () => {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-[hsl(var(--vibrant-blue))]/30"
                   />
                   <div>

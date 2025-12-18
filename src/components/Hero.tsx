@@ -28,6 +28,9 @@ const Hero = () => {
         <img
           src={heroProfile}
           alt="Marziyeh Lak"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className={`w-full h-[100%] object-cover object-center transition-all duration-[2000ms] ease-out ${isLoaded ? "scale-100 opacity-100" : "scale-110 opacity-0"
             }`}
           style={{
