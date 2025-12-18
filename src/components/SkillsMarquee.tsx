@@ -17,7 +17,7 @@ const SkillsMarquee = () => {
   return (
     <section className="py-12 md:py-16 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-6 mb-12">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-left font-playfair">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair text-foreground">
           Skills & Technologies
         </h2>
       </div>
@@ -35,7 +35,7 @@ const SkillsMarquee = () => {
             {/* Scrolling Container */}
             <div className="relative flex overflow-hidden">
               {/* Duplicate the skills array for seamless loop */}
-              <div 
+              <div
                 className="flex gap-4 animate-scroll-left hover:pause-animation"
                 style={{
                   animationDuration: `${20 + index * 5}s` // Varying speeds for visual interest

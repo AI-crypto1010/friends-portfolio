@@ -62,6 +62,9 @@ export default {
           foreground: "hsl(var(--vibrant-blue-foreground))",
         },
       },
+      fontFamily: {
+        playfair: ['"Playfair Display"', 'serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
