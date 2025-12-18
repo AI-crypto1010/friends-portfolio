@@ -23,6 +23,48 @@ const Testimonials = () => {
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
       rating: 5,
     },
+    {
+      name: "Sarah Mitchell",
+      role: "E-commerce Director",
+      quote: "Outstanding development skills! Our online store performance improved dramatically after the redesign.",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
+      rating: 5,
+    },
+    {
+      name: "Mohammad Ali Ramezani",
+      role: "Marketing Manager",
+      quote: "Clean code, excellent communication, and deep understanding of modern web technologies. A true professional.",
+      avatar: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=150&h=150&fit=crop",
+      rating: 5,
+    },
+    {
+      name: "Lisa Anderson",
+      role: "Marketing Manager",
+      quote: "The AI integration they built for us has transformed how we interact with customers. Highly recommended!",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
+      rating: 5,
+    },
+    {
+      name: "Michael Brown",
+      role: "CTO",
+      quote: "Their blockchain expertise helped us launch our DeFi platform successfully. Reliable and knowledgeable partner.",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+      rating: 5,
+    },
+    {
+      name: "Amanda Wilson",
+      role: "UX Designer",
+      quote: "Perfect collaboration! They understood our design vision and translated it into a flawless user experience.",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
+      rating: 5,
+    },
+    {
+      name: "James Rodriguez",
+      role: "Fintech Founder",
+      quote: "The trading bot they developed exceeded all our expectations. Precise, fast, and incredibly reliable.",
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop",
+      rating: 5,
+    },
   ];
 
   // Duplicate testimonials for seamless loop
@@ -36,9 +78,6 @@ const Testimonials = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             what clients say
           </h2>
-          <span className="text-[hsl(var(--vibrant-blue))] text-lg sm:text-xl md:text-2xl font-bold border-2 border-[hsl(var(--vibrant-blue))] rounded-lg px-3 sm:px-4 py-1 sm:py-2 bg-[hsl(var(--vibrant-blue))]/10">
-            [{testimonials.length}]
-          </span>
         </div>
 
         {/* Scrolling Container */}

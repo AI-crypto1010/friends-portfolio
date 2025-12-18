@@ -2,11 +2,11 @@ import { AppleIcon, Bitcoin, Bot, Code2, LucideGitGraph, Palette, Smartphone } f
 
 const Services = () => {
   const services = [
-    {
-      icon: <Palette className="w-12 h-12" />,
-      title: "Web Design",
-      description: "Crafting clean, user-centered interfaces using Figma — from wireframes to high-fidelity visuals that elevate your brand's look and feel.",
-    },
+    // {
+    //   icon: <Palette className="w-12 h-12" />,
+    //   title: "Web Design",
+    //   description: "Crafting clean, user-centered interfaces using Figma — from wireframes to high-fidelity visuals that elevate your brand's look and feel.",
+    // },
     {
       icon: <Code2 className="w-12 h-12" />,
       title: "Web Development",

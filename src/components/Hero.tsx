@@ -1,85 +1,82 @@
-import { useEffect, useRef } from "react";
-// @ts-ignore - Vanta.js doesn't have perfect TypeScript support
-import * as THREE from "three";
+import heroProfile from "@/assets/hero-profile.jpeg";
+import { MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const vantaRef = useRef<HTMLDivElement>(null);
-  const vantaEffect = useRef<any>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    if (!vantaRef.current) return;
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
-    let mounted = true;
-
-    // Dynamically import Vanta.js Birds effect
-    import("vanta/dist/vanta.birds.min")
-      .then((BIRDS) => {
-        if (!vantaRef.current || !mounted) return;
-
-        // Handle different export formats
-        const BirdsEffect = BIRDS.default || BIRDS;
-
-        // Initialize Vanta Birds effect
-        vantaEffect.current = BirdsEffect({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          backgroundColor: 0x000000,
-          color1: 0xffffff,
-          color2: 0xffffff,
-          birdSize: 0.60,
-          speedLimit: 3.00,
-          separation: 19.00,
-          alignment: 19.00,
-          cohesion: 19.00,
-          quantity: 5.00,
-          backgroundAlpha: 0.0,
-          THREE: THREE,
-        });
-      })
-      .catch((error) => {
-        console.error("Error loading Vanta.js:", error);
-      });
-
-    // Cleanup function
-    return () => {
-      mounted = false;
-      if (vantaEffect.current) {
-        vantaEffect.current.destroy();
-      }
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col bg-black text-white overflow-hidden">
-      {/* Vanta.js Birds Background */}
-      <div ref={vantaRef} className="absolute inset-0 z-0" />
+    <section id="hero" className="relative min-h-screen flex flex-col text-white overflow-hidden">
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-black/30 to-black/90" />
+      {/* Full Background Image with Parallax */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img 
+          src={heroProfile} 
+          alt="Marziyeh Lak" 
+          className={`w-full h-[120%] object-cover object-center transition-all duration-[2000ms] ease-out ${
+            isLoaded ? "scale-100 opacity-100" : "scale-110 opacity-0"
+          }`}
+          style={{
+            transform: `translateY(${scrollY * 0.4}px) scale(${isLoaded ? 1 : 1.1})`,
+            filter: `blur(${Math.min(scrollY * 0.02, 8)}px)`,
+          }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30 transition-opacity duration-[1500ms] delay-300 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`} />
+      </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end">
+      <div className="relative z-10 flex-1 flex flex-col">
         {/* Bottom Content */}
-        <div className="pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 container mx-auto max-w-7xl">
-          <div className="animate-fade-in space-y-4 md:space-y-6">
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-2 md:mb-4 text-white/90">
-              Web & product design specialist
-            </p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-[0.9]">
-              <span className="block bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
-                Marziyeh Lak
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-2 md:mt-4 text-white/80 font-light">
-              Frontend developer
-            </p>
+        <div 
+          className="mt-auto pb-12 px-6 container mx-auto"
+          style={{
+            opacity: Math.max(1 - scrollY * 0.003, 0),
+            transform: `translateY(${scrollY * 0.2}px)`,
+          }}
+        >
+          <p className={`text-xl md:text-2xl font-light mb-2 transition-all duration-1000 delay-500 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+            Backend & Full Stack Developer
+          </p>
+          <div className={`flex items-center gap-2 mb-4 transition-all duration-1000 delay-600 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-vibrant-blue/75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-vibrant-blue"></span>
+            </span>
+            <span className="text-sm md:text-base font-light tracking-wide">Available For Work</span>
           </div>
+          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-playfair font-black tracking-tight transition-all duration-1000 delay-700 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+            Marziyeh Lak
+          </h1>
+          <p className={`flex items-center gap-2 text-lg md:text-xl mt-4 transition-all duration-1000 delay-900 ${
+            isLoaded ? "opacity-90 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+            <MapPin className="w-5 h-5 text-vibrant-blue" />
+            Based in Iran
+          </p>
         </div>
       </div>
     </section>
