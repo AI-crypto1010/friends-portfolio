@@ -1,6 +1,7 @@
-import heroProfile from "@/assets/profile-photo.png";
+import heroProfile from "@/assets/hero-profile.jpeg";
 import { MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
+import RainAnimation from "./RainAnimation";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,6 +24,9 @@ const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col text-white overflow-hidden">
 
+      {/* Rain Animation */}
+      {/* <RainAnimation /> */}
+
       {/* Full Background Image with Parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
@@ -31,16 +35,20 @@ const Hero = () => {
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className={`w-full h-[100%] object-cover object-center transition-all duration-[2000ms] ease-out ${isLoaded ? "scale-100 opacity-100" : "scale-110 opacity-0"
+          className={`w-full h-[100%] object-cover object-center transition-all ease-out ${isLoaded ? "scale-100 opacity-100" : "scale-110 opacity-0"
             }`}
           style={{
             transform: `translateY(${scrollY * 0.4}px) scale(${isLoaded ? 1 : 1.1})`,
             filter: `blur(${Math.min(scrollY * 0.02, 8)}px)`,
+            transitionDuration: '2000ms',
           }}
         />
         {/* Dark overlay for text readability */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30 transition-opacity duration-[1500ms] delay-300 ${isLoaded ? "opacity-100" : "opacity-0"
-          }`} />
+        <div
+          className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30 transition-opacity delay-300 ${isLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          style={{ transitionDuration: '1500ms' }}
+        />
       </div>
 
       {/* Content Container */}
@@ -53,7 +61,7 @@ const Hero = () => {
             transform: `translateY(${scrollY * 0.2}px)`,
           }}
         >
-          <p className={`text-xl md:text-2xl font-light mb-2 transition-all duration-1000 delay-500 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          <p className={`text-xl md:text-3xl font-light mb-2 transition-all duration-1000 delay-500 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
             Backend & Full Stack Developer
           </p>
@@ -69,7 +77,7 @@ const Hero = () => {
             }`}>
             Marziyeh Lak
           </h1>
-          <p className={`flex items-center gap-2 text-lg md:text-xl mt-4 transition-all duration-1000 delay-900 ${isLoaded ? "opacity-90 translate-y-0" : "opacity-0 translate-y-8"
+          <p className={`flex items-center gap-2 text-lg md:text-2xl mt-4 transition-all duration-1000 delay-900 ${isLoaded ? "opacity-90 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
             <MapPin className="w-5 h-5 text-vibrant-blue" />
             Based in Iran
