@@ -1,4 +1,4 @@
-import heroProfile from "@/assets/hero-profile.jpeg";
+import heroProfile from "@/assets/profile-photo.png";
 import { MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
 
